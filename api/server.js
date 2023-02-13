@@ -1,11 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
+import router from "./routes/index.js";
 dotenv.config()
 
 const { PORT, MONGO_URI } = process.env
 
 const app = express()
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+app.use("/", router)
+
 
 mongoose.set('strictQuery', false)
 
