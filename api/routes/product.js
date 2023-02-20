@@ -13,7 +13,7 @@ productRouter.get("/:id", getProductById);
 
 productRouter.post("/", createProduct);
 
-productRouter.put("/", updateProduct);
+productRouter.put("/:id", updateProduct);
 
 productRouter.delete("/", deleteProduct);
 
