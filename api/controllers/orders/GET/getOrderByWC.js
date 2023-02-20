@@ -1,9 +1,9 @@
 import Order from "../../../models/orders.js";
 
-export const getOrderById = async (req, res) => {
-    const { id } = req.params
+export const getOrderByWC = async (req, res) => {
+    const { withdrawalCode } = req.params
     try {
-        const order = await Order.findById(id)
+        const order = await Order.findOne(withdrawalCode)
         .populate({path: "Product"})
         .populate({path: "User"})
         .lean()

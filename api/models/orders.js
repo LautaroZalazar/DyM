@@ -21,6 +21,9 @@ const ordersModel = model('Orders', Schema({
     withdrawalDay: {
         type: Date,
         required: true
+    },
+    withdrawalCode: {
+        type: String
     }
 }))
 
