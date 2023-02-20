@@ -4,8 +4,8 @@ export const getProductById = async (req, res) => {
     const { id } = req.params
     try {
         const product = await Product.findById(id)
-        .populate({path: "Detail"})
-        .populate({path: "Category"})
+        .populate({path: "detail"})
+        .populate({path: "category"})
         .lean()
         if (!product) { 
             return res.status(404).json({success: false, msg: "Product not found" })

@@ -12,6 +12,9 @@ const detailModel = model('Detail', Schema({
     color: {
         type: String,
         required: [true, "Color is required"]
+    },
+    description: {
+        type: String
     }
 }))
 

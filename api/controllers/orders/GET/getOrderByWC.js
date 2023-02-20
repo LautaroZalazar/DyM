@@ -4,8 +4,8 @@ export const getOrderByWC = async (req, res) => {
     const { withdrawalCode } = req.params
     try {
         const order = await Order.findOne(withdrawalCode)
-        .populate({path: "Product"})
-        .populate({path: "User"})
+        .populate({path: "products"})
+        .populate({path: "user"})
         .lean()
         if (!order) { 
             return res.status(404).json({success: false, msg: "Order not found" })
